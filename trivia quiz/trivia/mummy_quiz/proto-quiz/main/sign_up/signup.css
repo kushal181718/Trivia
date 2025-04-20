@@ -1,0 +1,258 @@
+/* Import base styles */
+@import url('../landing_page/styles.css');
+.container{
+    background: linear-gradient(rgb(8, 54, 134), rgba(36, 34, 114, 0.61), rgb(121, 62, 18));
+}
+/* Body styles for background */
+body {
+    background: linear-gradient(135deg, #4f46e5, #0c1222); /* Gradient background */
+    color: #fff; /* Text color for better visibility */
+    font-family: 'Outfit', sans-serif; /* Font family */
+    cursor: default; /* Ensure default cursor is visible */
+}
+
+.signup-card {
+    max-width: 400px;
+    padding: 2.5rem;
+    margin: auto; /* Center the card */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent white background for the card */
+    border-radius: 15px; /* Rounded corners */
+    backdrop-filter: blur(15px); /* Frosted glass effect */
+}
+
+.signup-title {
+    font-size: 2rem;
+   
+    margin-bottom: 1.5rem; /* Adjusted margin */
+    color: #fff; /* Title color */
+}
+
+.input-group {
+    margin-bottom: 1.5rem;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #fff; /* Label color */
+    font-size: 0.9rem;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 0.8rem;
+    border: none; /* Remove border */
+    border-radius: 25px; /* Rounded corners */
+    background: rgba(255, 255, 255, 0.2); /* Semi-transparent background for input */
+    color: #fff; /* Input text color */
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.9rem;
+    transition: border-color 0.3s ease; /* Smooth transition for border color */
+    padding-left: 2.5rem; /* Add padding to the left to accommodate the icon */
+    height: 40px; /* Set a height for the input field */
+    border-radius: 20px; /* Match the border radius of the input field */
+    border: 1px solid #ccc; /* Add a border for better visibility */
+    background-color: rgba(255, 255, 255, 0.1); /* Background color */
+    color: #fff; /* Text color */
+}
+
+.input-group input:focus {
+    border-color: var(--primary); /* Change border color on focus */
+}
+
+.signup-btn {
+    width: 100%;
+    padding: 1rem;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 1.5rem;
+    transition: background 0.3s ease, transform 0.3s ease; /* Smooth transition */
+}
+
+.signup-btn:hover {
+    background: #4f46e5; /* Darker shade on hover */
+    transform: scale(1.05); /* Slightly scale up on hover */
+}
+
+/* Custom cursor styles */
+.cursor {
+    width: 8px;
+    height: 8px;
+    background: #A78BFA;
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s, height 0.3s;
+    mix-blend-mode: difference;
+}
+
+.cursor.active {
+    width: 16px;
+    height: 16px;
+    background: #6366f1;
+}
+
+.cursor-follower {
+    width: 24px;
+    height: 24px;
+    background: rgba(167, 139, 250, 0.3);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9998;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.cursor-follower.active {
+    transform: scale(1.5);
+    background: rgba(99, 102, 241, 0.2);
+}
+
+/* Ensure all elements use custom cursor */
+* {
+    cursor: default; /* Show default cursor */
+}
+
+/* Only show default cursor on mobile */
+@media (max-width: 768px) {
+    .cursor, .cursor-follower {
+        display: none !important;
+    }
+    * {
+        cursor: auto !important;
+    }
+}
+
+/* Interactive elements hover states */
+button:hover, 
+input:hover, 
+a:hover, 
+.signup-btn:hover,
+.input-wrapper:hover {
+    cursor: none !important;
+}
+
+/* Ensure cursor is visible over glass card */
+.glass-card {
+    position: relative;
+    z-index: 1;
+}
+
+/* Ensure container doesn't interfere with cursor */
+.container {
+    position: relative;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* But allow interactions with form elements */
+.glass-card,
+.signup-form,
+.input-group,
+input,
+button,
+.input-wrapper,
+#togglePassword {
+    pointer-events: auto;
+}
+
+.input-wrapper {
+    position: relative; /* Position relative for absolute positioning of the icon */
+}
+
+.input-wrapper svg {
+    position: absolute;
+    left: 18rem; /* Position the icon to the left */
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%); /* Adjust for vertical centering */
+    color: #fff; /* Icon color */
+    width: 24px; /* Icon size */
+    height: 24px; /* Icon size */
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.input-wrapper svg:hover {
+    color: #f0c040; /* Change color on hover for better interaction */
+}
+
+.messageDiv{
+    background-color:hsl(327, 90%, 28%);
+    color:white;
+    padding:10px 20px;
+    border-radius:5px;
+    margin: 10px 0;
+    font-size: 1rem;
+    opacity: 0;
+    animation: fadeOut 7s forwards;
+}
+
+@keyframes fadeOut{
+    100%{
+        opacity: 0;
+    }
+}
+
+#bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.container {
+    position: relative;
+    z-index: 1;
+}
+
+/* Interactive elements should show pointer cursor */
+button, 
+input, 
+a, 
+.signup-btn,
+.input-wrapper,
+#togglePassword {
+    cursor: pointer !important;
+}
+
+/* Input fields should show text cursor */
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+    cursor: text !important;
+}
+
+/* Add these styles for the eye icon */
+#togglePassword {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0.7);
+    transition: color 0.3s ease;
+    z-index: 2;
+    padding: 5px;
+}
+
+#togglePassword:hover {
+    color: #fff;
+}
+
+.input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-wrapper input {
+    padding-right: 40px; /* Make space for the eye icon */
+}

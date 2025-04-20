@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0c1222">
+    <title>Login - Quiz Master</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <canvas id="bg"></canvas>
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+    <div class="container">
+        <div class="glass-card login-card">
+            <div class="card-content">
+                <div class="header">
+                    <div class="logo">
+                        <img src="/mummy_quiz/proto-quiz/images/logo.png" alt="Quiz Logo">
+                    </div>
+                    <h1 class="login-title">Login</h1>
+                </div>
+                
+                <form class="login-form" id="loginForm">
+                    <div class="input-group">
+                        <label>Username</label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-user"></i>
+                            <input type="text" id="username" placeholder="Type your username" required>
+                        </div>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label>Password</label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" id="password" placeholder="Type your password" required>
+                        </div>
+                        <a href="#" class="forgot-password">Forgot password?</a>
+                    </div>
+
+                    <button type="submit" class="login-btn">
+                        <i class="fas fa-sign-in-alt"></i>
+                        Login
+                    </button>
+                </form>
+
+                <div class="divider">Or Sign Up Using</div>
+
+               
+
+                <div class="signup-link">
+                  
+                    <a href="/mummy_quiz/proto-quiz/main/sign_up/signup.html" class="signup-btn animated-signup">SIGN UP</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

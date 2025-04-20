@@ -1,0 +1,248 @@
+/* Import base styles */
+@import url('../landing_page/styles.css');
+.container{
+   background: linear-gradient(rgb(8, 54, 134), rgba(36, 34, 114, 0.61), rgb(121, 62, 18));
+}
+.login-card {
+    max-width: 400px;
+    padding: 2.5rem;
+}
+
+.login-title {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--text-primary);
+}
+
+.input-group {
+    margin-bottom: 1.5rem;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.input-wrapper:hover {
+    transform: translateX(5px);
+}
+
+.input-wrapper i {
+    position: absolute;
+    left: 1rem;
+    color: var(--text-secondary);
+}
+
+.input-wrapper input {
+    width: 100%;
+    padding: 0.8rem 1rem 0.8rem 2.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--glass-border);
+    border-radius: 25px;
+    color: var(--text-primary);
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.input-wrapper input:focus {
+    outline: none;
+    border-color: var(--primary);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.forgot-password {
+    display: block;
+    text-align: right;
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.forgot-password:hover {
+    color: var(--primary);
+}
+
+.login-btn {
+    width: 100%;
+    padding: 1rem;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+}
+
+.login-btn:hover {
+    background: #4f46e5;
+}
+
+.divider {
+    text-align: center;
+    margin: 2rem 0;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    position: relative;
+}
+
+.divider::before,
+.divider::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 30%;
+    height: 1px;
+    background: var(--glass-border);
+}
+
+.divider::before { left: 0; }
+.divider::after { right: 0; }
+
+.social-login {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.social-btn {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: none;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.social-btn i {
+    font-size: 1.4rem;
+}
+
+.social-btn.facebook { 
+    background: #1877f2;
+}
+
+.social-btn.x-twitter { 
+    background: #000000;
+}
+
+.social-btn.x-twitter i {
+    font-size: 1.2rem;
+}
+
+.social-btn.google { 
+    background: #ea4335;
+}
+
+.social-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.signup-link {
+    text-align: center;
+}
+
+.signup-link span {
+    display: block;
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.signup-btn {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.signup-btn:hover {
+    color: var(--primary-dark);
+}
+
+@media (max-width: 480px) {
+    .login-card {
+        padding: 2rem;
+    }
+    
+    .social-login {
+        gap: 1.2rem;
+    }
+    
+    .social-btn {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+/* Cursor Fix */
+.cursor {
+    width: 8px;
+    height: 8px;
+    background: #A78BFA;
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 999;
+    display: block; /* Ensure it is visible */
+}
+
+.cursor-follower {
+    width: 24px;
+    height: 24px;
+    background: rgba(167, 139, 250, 0.3);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 999;
+    display: block; /* Ensure it is visible */
+}
+
+/* Remove forced hiding of default cursor */
+body {
+    cursor: default;
+}
+
+* {
+    cursor: auto;
+}
+
+/* Hide custom cursor only on mobile */
+@media (max-width: 480px) {
+    .cursor, .cursor-follower {
+        display: none;
+    }
+    
+    body {
+        cursor: auto;
+    }
+}
+
+/* Interactive elements hover states */
+button:hover, a:hover, .social-btn:hover {
+    transform: scale(1.05);
+}
